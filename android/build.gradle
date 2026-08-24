@@ -1,18 +1,10 @@
+plugins {
+    id 'com.android.library' version '8.10.1'
+    id 'org.jetbrains.kotlin.android' version '2.1.0'
+}
+
 group 'com.android_package_installer'
 version '1.0-SNAPSHOT'
-
-buildscript {
-    ext.kotlin_version = '1.6.10'
-    repositories {
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
-}
 
 allprojects {
     repositories {
@@ -20,9 +12,6 @@ allprojects {
         mavenCentral()
     }
 }
-
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
 
 android {
     namespace = "com.android_package_installer"
