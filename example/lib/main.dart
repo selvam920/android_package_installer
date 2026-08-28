@@ -72,12 +72,12 @@ class _MyAppState extends State<MyApp> {
                                   labelText: "APK file path",
                                   hintText: "Enter path"))),
                       _button('Select files', () async {
-                        FilePickerResult? result = await FilePicker.platform
-                            .pickFiles(type: FileType.any, allowMultiple: true);
-                        if (result != null) {
+                        final files = await FilePicker.pickFiles(
+                            type: FileType.any, allowMultiple: true);
+                        if (files.isNotEmpty) {
                           setState(() {
                             _filePathFieldController.text =
-                                result.files.map((f) => f.path!).join(',');
+                                files.map((f) => f.path!).join(',');
                             _installationStatus = '';
                           });
                         }
