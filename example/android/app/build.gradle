@@ -21,10 +21,11 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+
 android {
     namespace = "com.android_package_installer_example"
     compileSdk 37
-    ndkVersion flutter.ndkVersion
+    ndkVersion = "30.0.16248370"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_21
